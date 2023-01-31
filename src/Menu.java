@@ -9,7 +9,8 @@ public class Menu {
     private int choice;
 
     Map<String, Integer> contacts = new HashMap<>();
-    ArrayList<String > messages = new ArrayList<>();
+//    ArrayList<String > messages = new ArrayList<>();
+    ArrayList<Messages> messages = new ArrayList<>();
     
     public void callMenu(){
         System.out.println("Hello user!");
@@ -111,7 +112,9 @@ public class Menu {
                 }
                 else{
                     for(int i=0;i<messages.size();i++){
-                        System.out.println((i+1)+". "+ messages.get(i));
+
+                        System.out.print( (i+1)+ ". ");
+                        messages.get(i).getDetails();
                     }
                 }
                 ManageMessages();
@@ -119,10 +122,14 @@ public class Menu {
             }
             case 2:
             {
-                System.out.println("Enter the message below: ");
+                System.out.println("Enter recipient name: ");
+                String rec = scan.next();
+                System.out.println("Enter recipient id: ");
+                int id = scan.nextInt();
+                System.out.println("Enter the message: ");
                 scan.nextLine();
                 String msg = scan.nextLine();
-                messages.add(msg);
+                messages.add(new Messages(msg,rec,id));
                 System.out.println("Successfully added message.");
                 ManageMessages();
                 break;
