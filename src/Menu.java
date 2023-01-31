@@ -10,6 +10,7 @@ public class Menu {
 
     Map<String, Integer> contacts = new HashMap<>();
     ArrayList<String > messages = new ArrayList<>();
+    
     public void callMenu(){
         System.out.println("Hello user!");
         System.out.println("What would you like to do? ");
@@ -29,6 +30,7 @@ public class Menu {
         System.out.println("\t1.Show all Contacts.\n\t2.Add a new Contact.\n\t3.Search a Contact\n\t4.Delete a Contact\n\t5.Go back to previous menu");
         Scanner scan = new Scanner(System.in);
         int secondChoice = scan.nextInt();
+        
         switch (secondChoice)
         {
             case 1:
@@ -99,6 +101,7 @@ public class Menu {
         System.out.println("\t1.See the list a of all messages\n\t2.Send a new message\n\t3.Go back to previous menu");
         Scanner scan = new Scanner(System.in);
         int secondChoice = scan.nextInt();
+        
         switch (secondChoice)
         {
             case 1:
@@ -133,7 +136,9 @@ public class Menu {
                 break;
         }
     }
+    
     public void quitMenu(){
         System.out.println("Closing Application");
     }
+    
 }
